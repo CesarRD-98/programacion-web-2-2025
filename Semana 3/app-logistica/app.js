@@ -2,6 +2,7 @@ const yargs = require('yargs');
 const dayjs = require('dayjs');
 const colors = require('colors');
 
+// yargs permite leer argumentos de la consola y asignarles un valor
 const argv = yargs
     .options('peso', {
         alias: 'p',
@@ -21,9 +22,9 @@ const argv = yargs
 const costoBase = 50;
 const tiempoProcesamiento = 2; // dias
 
-
 const peso = argv.peso;
 const distancia = argv.distancia;
+
 const diasEntrega = Math.ceil(distancia / 100); // redondear hacia arriba 0.6 a 1, 1.2 a 2, etc.
 
 let pesoExcedente = peso > 5 ? (peso - 5) * 20 : 0;
